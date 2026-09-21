@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT OR Apache-2.0
 # Kernel-state observation used by nixshare-health's reset-client path.
 #
 # This is kept as a small shell library so the production executable and the

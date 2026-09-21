@@ -11,6 +11,6 @@
 <!-- markdownlint-disable MD034 -->
 
 <!-- prettier-ignore -->
-- [ ] I have read and agree to version 1.0 of the Individual Contributor License Agreement at https://github.com/corbet-labs/.github/blob/cla-v1.0/CLA.md.
+- [ ] I have read and agree to version 1.0 of the Individual Contributor License Agreement at https://github.com/corbet-nix/.github/blob/cla-v1.0/CLA.md.
 
 <!-- markdownlint-enable MD034 -->

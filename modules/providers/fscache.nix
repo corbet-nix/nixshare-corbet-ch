@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT OR Apache-2.0
 # FS-Cache schema shared by the NixOS and system-manager implementations.
 #
 # This is an NFS client provider, rather than core state: the core owns a

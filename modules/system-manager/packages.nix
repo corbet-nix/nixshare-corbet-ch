@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT OR Apache-2.0
 # Arch package ownership for system-manager hosts.
 #
 # The consuming host owns installation (and any AUR policy) through its one

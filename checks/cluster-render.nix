@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT OR Apache-2.0
 # Reads the catalogue's promises back off the RENDERED BYTES, not off the options that produced
 # them.
 #

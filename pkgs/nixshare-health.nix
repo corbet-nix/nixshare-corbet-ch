@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT OR Apache-2.0
 # pkgs/nixshare-health.nix
 #
 # The SECOND failure mode, and the one the stuck-automount watchdog

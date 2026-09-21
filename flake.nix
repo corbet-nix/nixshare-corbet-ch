@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT OR Apache-2.0
 {
   description = "Declarative NFS/CIFS share definitions whose server address resolves through nixnet peer names instead of hardcoded IPs, plus a watchdog that force-unmounts a stuck automount before it hangs the session.";
 
@@ -22,7 +23,7 @@
     # THE APP GRAMMAR AND CONSUMER FACTORY THIS REPOSITORY CONSUMES. The checks render through the
     # real grammar, and the exported cluster module is constructed by the matching factory.
     nixk3s = {
-      url = "git+https://github.com/julian-corbet/nixk3s-corbet-ch";
+      url = "git+https://github.com/corbet-nix/nixk3s-corbet-ch";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nixidy.follows = "nixidy";
     };

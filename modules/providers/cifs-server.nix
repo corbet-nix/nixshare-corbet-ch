@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT OR Apache-2.0
 # modules/providers/cifs-server.nix
 #
 # The CIFS/SMB server side: smbd + ZFS `sharesmb`-driven usershares,

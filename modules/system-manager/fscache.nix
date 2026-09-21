@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT OR Apache-2.0
 # system-manager implementation of the shared FS-Cache schema.
 #
 # cachefilesd is an Arch-owned package and unit. This module owns the desired

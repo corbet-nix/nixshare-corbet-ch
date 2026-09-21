@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT OR Apache-2.0
 # Throwaway eval smoke test -- NOT part of the module surface, just used
 # during scaffolding to confirm modules/*.nix evaluates cleanly end to end
 # (schema, both providers, watchdog render, assertions) before publishing.

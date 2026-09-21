@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT OR Apache-2.0
 # modules/core.nix
 #
 # nixshare's schema (nixshare.shares.<name>) plus the two
@@ -21,7 +22,7 @@
 # The `peer` field is intentionally just a plain string: nixshare has NO
 # address-resolution logic of its own. It builds `what = "<peer>:<path>"`
 # (NFS) / `what = "//<peer>/<path>"` (CIFS) and lets ordinary NSS resolve
-# `<peer>` -- which is exactly what a github:julian-corbet/nixnet-corbet-ch
+# `<peer>` -- which is exactly what a github:corbet-nix/nixnet-corbet-ch
 # `nixnet.peers.<name>.hostnames` entry publishes into a
 # live-managed /etc/hosts. nixshare works identically with a peer name
 # resolved by nixnet, by plain DNS, or by a hand-edited /etc/hosts line --
@@ -50,7 +51,7 @@ let
         example = "storage-host";
         description = ''
           The share's server, named -- NOT a raw IP/hostname literal.
-          Conventionally a github:julian-corbet/nixnet-corbet-ch
+          Conventionally a github:corbet-nix/nixnet-corbet-ch
           `nixnet.peers.<name>.hostnames` entry, so this share's
           server address inherits nixnet's LAN/overlay failover for free;
           nixshare itself just concatenates this string into `what =`
@@ -417,7 +418,7 @@ in
           are still logged to the journal, just never alerted externally.
 
           nixshare has no hard dependency on
-          github:julian-corbet/nixpush-corbet-ch -- any shell command
+          github:corbet-nix/nixpush-corbet-ch -- any shell command
           that accepts a trailing message string works -- but
           `config.nixpush.lib.mkSendCommand { ... }` (nixpush's
           own Nix-level helper, see its README) is the intended, tested

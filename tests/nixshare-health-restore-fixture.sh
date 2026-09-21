@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT OR Apache-2.0
 fixture=$(mktemp -d)
 cleanup_fixture() {
   rm -f "$fixture/teardown.success"

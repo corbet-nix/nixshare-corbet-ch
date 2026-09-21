@@ -1,7 +1,7 @@
 # nixshare
 
 Declarative NFS/CIFS shares. The client side names its server as a
-[nixnet](https://github.com/julian-corbet/nixnet-corbet-ch) peer instead
+[nixnet](https://github.com/corbet-nix/nixnet-corbet-ch) peer instead
 of a hardcoded address, plus a watchdog that detects a stuck automount
 attempt and force-unmounts it **before** it hangs the session, instead of
 after. The server side exports a ZFS `sharenfs`/`sharesmb`-carried tree
@@ -18,7 +18,7 @@ not even `kill -9` frees it. The only way out used to be a manual
 `sudo umount -f -l` per stuck mount, entered by hand, after the session was
 already wedged.
 
-[nixnet](https://github.com/julian-corbet/nixnet-corbet-ch) already solves
+[nixnet](https://github.com/corbet-nix/nixnet-corbet-ch) already solves
 the *address* half of this generically — a peer is reachable over several
 transports (LAN, overlay, …), nixnet health-checks them and keeps
 `/etc/hosts` pointed at whichever one currently works. nixshare is the
@@ -35,7 +35,7 @@ is wedged and reach for `sudo umount -f -l` themselves.
 ```nix
 # flake.nix (consumer side)
 {
-  inputs.nixshare.url = "github:julian-corbet/nixshare-corbet-ch";
+  inputs.nixshare.url = "github:corbet-nix/nixshare-corbet-ch";
 
   outputs = { self, nixpkgs, nixshare, ... }: {
     nixosConfigurations.example-host = nixpkgs.lib.nixosSystem {
@@ -57,7 +57,7 @@ nixshare = {
   enable = true;
 
   # Optional: wire force-unmount alerts through nixpush. Requires
-  # github:julian-corbet/nixpush-corbet-ch's own module to be imported
+  # github:corbet-nix/nixpush-corbet-ch's own module to be imported
   # too -- nixshare has no hard dependency on it (see
   # `watchdog.alertCommand`'s own option doc), this is just the intended
   # pairing.
@@ -92,7 +92,7 @@ nixshare.fscache = {
 };
 
 # The peer named above, so "storage-host" inherits LAN/overlay failover --
-# see github:julian-corbet/nixnet-corbet-ch's own README for the full
+# see github:corbet-nix/nixnet-corbet-ch's own README for the full
 # option surface. nixshare only needs the name to already be
 # NSS-resolvable; it neither requires nor knows about nixnet directly.
 nixnet.enable = true;
@@ -308,7 +308,7 @@ them would have made recovery impossible while looking like it ran.
 - `shares.<name>.protocol` — `"nfs"` or `"cifs"`. Requires the matching
   `nfs-provider`/`cifs-provider` module imported (asserted).
 - `shares.<name>.peer` — a name, not a raw address; conventionally a
-  [nixnet](https://github.com/julian-corbet/nixnet-corbet-ch)
+  [nixnet](https://github.com/corbet-nix/nixnet-corbet-ch)
   `nixnet.peers.<name>` entry, but any NSS-resolvable name works.
 - `shares.<name>.remotePath` — NFS export path, or CIFS share name (no
   leading slash).
@@ -424,7 +424,7 @@ matching platform adapters:
 
 ```nix
 {
-  inputs.nixshare.url = "github:julian-corbet/nixshare-corbet-ch";
+  inputs.nixshare.url = "github:corbet-nix/nixshare-corbet-ch";
 }
 imports = [
   inputs.nixshare.systemManagerModules.core
@@ -488,7 +488,7 @@ same privilege level any ordinary `fstab`-driven mount runs at.
 | `experiments/` | Throwaway trials, dated Question/Hypothesis/Method/Status entries |
 | `studies/` | Write-ups that changed a decision |
 | `CONTRIBUTING.md` | The provider contract, concretely |
-| `LICENSE` | MIT |
+| `LICENSE-MIT`, `LICENSE-APACHE` | MIT OR Apache-2.0 |
 
 ## Server-side exports
 
@@ -571,7 +571,7 @@ subject rather than a second one: what they all have in common is doing somethin
 its own content — a document store, a photo library, a wiki — belongs elsewhere.
 
 It is a **translator, not a renderer**. The app grammar in
-[nixk3s](https://github.com/julian-corbet/nixk3s-corbet-ch) already turns "an image,
+[nixk3s](https://github.com/corbet-nix/nixk3s-corbet-ch) already turns "an image,
 these ports, this exposure class, these directories" into an Argo CD Application, a
 Namespace, a Deployment and a Service. This module defines into that grammar and
 emits no Kubernetes object of its own; what it adds is the part the grammar cannot
@@ -632,13 +632,13 @@ and created from nothing on the next one.
 
 nixshare is one of several small, independently-usable open-source
 projects sharing a common design system:
-[nixnet](https://github.com/julian-corbet/nixnet-corbet-ch) (declarative
+[nixnet](https://github.com/corbet-nix/nixnet-corbet-ch) (declarative
 multi-uplink networking and peer address failover — nixshare's own
 intended pairing for the `peer` field),
-[nixpush](https://github.com/julian-corbet/nixpush-corbet-ch) (provider-
+[nixpush](https://github.com/corbet-nix/nixpush-corbet-ch) (provider-
 agnostic notification dispatch — nixshare's own intended pairing for
 watchdog alerts), and
-[nixram](https://github.com/julian-corbet/nixram-corbet-ch) (memory-
+[nixram](https://github.com/corbet-nix/nixram-corbet-ch) (memory-
 pressure tuning by declared level), among others. nixshare's own niche is
 making one filesystem reachable from somewhere else — client mounts +
 stuck-automount recovery, server-side NFS/CIFS exports, and the
@@ -667,6 +667,7 @@ recorded as such in the catalogue rather than presented as measurements.
 reasoned, not yet measured, against a
 real deployment.
 
-## License
 
-MIT.
+## Licence
+
+Outbound licence is `MIT OR Apache-2.0`. See `LICENSE-MIT` and `LICENSE-APACHE`; every source file carries `SPDX-License-Identifier: MIT OR Apache-2.0`.

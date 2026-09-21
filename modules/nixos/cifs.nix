@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT OR Apache-2.0
 # NixOS implementation of the generic CIFS client provider.
 { config, lib, ... }:
 

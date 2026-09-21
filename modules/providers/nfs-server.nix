@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT OR Apache-2.0
 # modules/providers/nfs-server.nix
 #
 # The NFS server side: kernel nfsd (NFSv4-only), the idmapd Domain, firewall

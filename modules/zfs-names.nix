@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT OR Apache-2.0
 # modules/zfs-names.nix — the one definition of "a ZFS dataset name this repo is willing to inline
 # into a root shell script".
 #

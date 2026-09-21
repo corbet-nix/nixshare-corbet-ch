@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT OR Apache-2.0
 #
 # The cluster catalogue: what nixshare's cluster-side applications ARE.
 #

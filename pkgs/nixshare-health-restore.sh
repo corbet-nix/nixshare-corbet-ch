@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT OR Apache-2.0
 # Crash-safe restoration shared by the live health monitor and its fixture.
 #
 # The order is load-bearing.  An automount is the durable owner of the path:

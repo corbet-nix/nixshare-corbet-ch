@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT OR Apache-2.0
 # modules/providers/nfs.nix
 #
 # The NFS backend: turns every `nixshare.shares.<name>` with

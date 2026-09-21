@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT OR Apache-2.0
 # pkgs/nixshare-watchdog.nix
 #
 # The watchdog's entire implementation: a single, generic, config-driven

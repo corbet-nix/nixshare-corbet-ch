@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT OR Apache-2.0
 # modules/providers/cifs.nix
 #
 # The CIFS/SMB backend: turns every `nixshare.shares.<name>`
